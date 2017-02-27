@@ -1,17 +1,11 @@
 package com.facebook.tests.Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
-import org.w3c.dom.html.HTMLInputElement;
 
-/**
- * Created by FILIP on 2/25/2017.
- */
-public class FacebookMainPage {
+    public class FacebookMainPage {
 
     public static final String PAGE_TITLE = "Facebook - Log In or Sign Up";
     public static final String PAGE_URL = "http://www.facebook.com";

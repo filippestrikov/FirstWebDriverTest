@@ -20,7 +20,7 @@ public class Login_Test {
     @BeforeClass(alwaysRun = true)
     public void setUp() {
         driver = new FirefoxDriver();
-        System.setProperty("webdriver.gecko.driver", "D:\\Software\\Selenium\\geckodriver.exe"); //1
+        System.setProperty("webdriver.gecko.driver", "C:\\AutotestProjects\\FirstWebDriverTest\\WebDriver\\geckodriver.exe");
         fbMainPage = PageFactory.initElements(driver, FacebookMainPage.class);
         driver.manage().window().maximize();
         fbkLoginPage = PageFactory.initElements(driver, FacebookLoginPage.class);
@@ -32,14 +32,14 @@ public class Login_Test {
     }
 
     @Test(groups = "p1", dataProviderClass = FacebookData.class, dataProvider = "login")
-    public void testLoginPage(String email,String password,String loginPage){
+    public void testLoginPage(String email, String password, String loginPage){
         driver.get(fbMainPage.PAGE_URL);
         assertEquals(driver.getTitle(), fbMainPage.PAGE_TITLE);
         fbMainPage.setText_EmailLogin(email);
         fbMainPage.setText_PasswordLogin(password);
         fbMainPage.setLoginButton();
 
-           if(StringUtils.isBlank(loginPage)){
+        if(StringUtils.isBlank(loginPage)){
             boolean result = fbkLoginPage.checkLoginFormHeader(loginPage);
             assertTrue(result, "Expected Error" + loginPage);
         }
