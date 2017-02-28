@@ -7,8 +7,8 @@ import org.openqa.selenium.support.FindBy;
 
     public class FacebookLoginPage {
 
-    public static final String PAGE_TITLE_LOGIN = "Log into Facebook | Facebook";
-    public static final String PAGE_URL_LOGIN = "https://www.facebook.com/login.php?login_attempt=1&lwv=110";
+    public static final String PAGE_TITLE = "Log into Facebook | Facebook";
+    public static final String PAGE_URL = "https://www.facebook.com/login.php?login_attempt=1&lwv=110";
 
     @FindBy(css = "#_50f6")  WebElement logIntoFacebook;
 
