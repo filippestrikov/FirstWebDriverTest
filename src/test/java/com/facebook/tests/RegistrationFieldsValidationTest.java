@@ -20,7 +20,7 @@ import static org.testng.Assert.assertTrue;
 /**
  * Created by user on 18.03.2017.
  */
-public class RegistrationFieldsValidation {
+public class RegistrationFieldsValidationTest {
 
     public WebDriver driver;
     DevartLoginOrRegisterPage devartLoginOrRegisterPage;

@@ -9,28 +9,26 @@ import org.testng.Assert;
 /**
  * Created by user on 18.03.2017.
  */
-public class DifusionMainPage {
+public class DevartLoginOrRegisterPage {
 
-        public static final String DIFUSION_PAGE_TITLE = "Campus Difusión";
-        public static final String DIFUSION_PAGE_URL = "http://web.dif-unity-stage.avallain.net/register?role=student";
+        public static final String DIFUSION_PAGE_TITLE = "Devart - Log In or Register";
+        public static final String DIFUSION_PAGE_URL = "https://www.devart.com/login.html";
 
 
-        @FindBy(id = "registration_sign_up_without_token_input_first_name")
+        @FindBy(id = "_ctl0_middleContentPlaceHolder_userProfile_txtFirstName")
         WebElement firstNameField;
-        @FindBy(id = "registration_sign_up_without_token_input_last_name")
+        @FindBy(id = "_ctl0_middleContentPlaceHolder_userProfile_txtLastName")
         WebElement lastNameField;
-        @FindBy(id = "registration_sign_up_without_token_input_email")
+        @FindBy(id = "_ctl0_middleContentPlaceHolder_userProfile_txtEmail")
         WebElement emailField;
-        @FindBy(id = "registration_sign_up_without_token_input_password")
-        WebElement passwordField;
-        @FindBy(id = "registration_sign_up_without_token_input_password_confirmation")
-        WebElement confirmPassField;
-        @FindBy(css = ".btn.btn-action.high.less-roundy")
+        @FindBy(id = "_ctl0_middleContentPlaceHolder_userProfile_txtCompany")
+        WebElement companyField;
+        @FindBy(id = "_ctl0_middleContentPlaceHolder_userProfile_btnRegister")
         WebElement accountButton;
 
         WebDriver driver;
 
-        public DifusionMainPage(WebDriver driver) {this.driver = driver;}
+        public DevartLoginOrRegisterPage(WebDriver driver) {this.driver = driver;}
 
         public void setText_FirstNameField(String text) {
             firstNameField.sendKeys(text);
@@ -45,12 +43,8 @@ public class DifusionMainPage {
             Assert.assertEquals(emailField.getAttribute("value"), text);
         }
         public void setText_PasswordField(String text) {
-            passwordField.sendKeys(text);
-            Assert.assertEquals(passwordField.getAttribute("value"), text);
-        }
-        public void setText_confirmPassField(String text) {
-            confirmPassField.sendKeys(text);
-            Assert.assertEquals(confirmPassField.getAttribute("value"), text);
+            companyField.sendKeys(text);
+            Assert.assertEquals(companyField.getAttribute("value"), text);
         }
         public void setText_CreateAccountButton() {
             accountButton.click();
